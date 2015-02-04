@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The name of the product -->
+<?define Name = "FanFlow" ?>
+<!-- The manufacturer, for setup package publisher and folder info -->
+<?define Manufacturer = "Marek Suscak" ?>
+<!-- The version number of this setup package-->
+<?define Version = "1.0.0" ?>
+<!-- UpgradeCode must be unique and not changed once the first version of the program is installed. -->
+<?define UpgradeCode = "{3c3703a1-ccae-4d9a-b3b1-0828f91b0b24}" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="$(var.Name)" Version="$(var.Version)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)" Language="1033">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <!-- Allow upgrades and prevent downgrades -->
+		<MajorUpgrade AllowDowngrades="no" DowngradeErrorMessage="A newer version of $(var.Name) is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="$(var.Name)" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+    <!-- Define the directory structure -->
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="$(var.Name)" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="$(var.FanFlow.Service.TargetFileName)" Guid="b0d67f1e-f56a-4aa2-97cd-825d58fe0fd7">
+        <!-- Copies the TestService.exe file using the project reference preprocessor variables -->
+        <File Id="$(var.FanFlow.Service.TargetFileName)" Source="$(var.FanFlow.Service.TargetPath)" KeyPath="yes" />
+        <File Id="$(var.FanFlow.Service.TargetFileName).config" Source="$(var.FanFlow.Service.TargetPath).config" />
+        <File Id="NLog.dll" Source="$(var.FanFlow.Service.TargetDir)\NLog.dll" />
+        
+        <!-- Remove all files from the INSTALLFOLDER on uninstall -->
+        <RemoveFile Id="ALLFILES" Name="*.*" On="both" />
+        
+        <!-- Tell WiX to install the Service -->
+        <ServiceInstall Id="ServiceInstaller"
+                        Type="ownProcess"
+                        Name="$(var.Name)"
+                        DisplayName="$(var.Name)"
+                        Description="$(var.Name) fixes Gigabytes System Information Viewer fan control behavior."
+                        Start="auto"
+                        ErrorControl="normal">
+        </ServiceInstall>
+        
+        <!-- Tell WiX to start the Service -->
+        <ServiceControl Id="StartService" Start="install" Stop="both" Remove="uninstall" Name="$(var.Name)" Wait="yes" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

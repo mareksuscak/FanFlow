@@ -13,14 +13,17 @@ FanFlow makes a few assumptions. First it expects the file `thermald.exe` to be 
 FAQ
 ===
 
-*Q:* Does the FanFlow contain any viruses?
-*A:* No, no at all, it's open source so you can grab a copy of the source code yourself, review the code and also build it yourself. You need [Visual Studio 2013](http://www.visualstudio.com/products/visual-studio-community-vs) with NuGet Package Manager installed (should be by default) and [WiX toolset](http://wixtoolset.org/).
+**Q:** Does the FanFlow contain any viruses?
 
-*Q:* Will you charge me for using the FanFlow?
-*A:* No it is free of charge, forever.
+**A:** No, no at all, it's open source so you can grab a copy of the source code yourself, review the code and also build it yourself. You need [Visual Studio 2013](http://www.visualstudio.com/products/visual-studio-community-vs) with NuGet Package Manager installed (should be by default) and [WiX toolset](http://wixtoolset.org/).
 
-*Q:* If anything goes wrong how can I report a bug?
-*A:* Fill out [the new issue form](https://github.com/mareksuscak/FanFlow/issues/new) with as much details as you can provide and always provide a log file that can be found at `C:\Program Files (x86)\FanFlow\logs\logfile.txt` or `C:\Program Files\FanFlow\logs\logfile.txt` on 64bit and 32bit Windows respectively.
+**Q:** Will you charge me for using the FanFlow?
+
+**A:** No it is free of charge, forever.
+
+**Q:** If anything goes wrong how can I report a bug?
+
+**A:** Fill out [the new issue form](https://github.com/mareksuscak/FanFlow/issues/new) with as much details as you can provide and always provide a log file that can be found at `C:\Program Files (x86)\FanFlow\logs\logfile.txt` or `C:\Program Files\FanFlow\logs\logfile.txt` on 64bit and 32bit Windows respectively.
 
 License
 =======

@@ -8,7 +8,7 @@ You can download the latest installer [here](https://github.com/mareksuscak/FanF
 Assumptions
 ===========
 
-FanFlow makes a few assumptions. First it expects the file `thermald.exe` to be present at `C:\Program Files (x86)\Gigabyte\SIV\thermald.exe` on 64bit Windows and at `C:\Program Files\Gigabyte\SIV\thermald.exe` on 32bit Windows so if you've installed SIV elsewhere create an issue and I will see what can I do about it. Another assumption is that you have at least the .NET framework 4 installed on your machine (comes with Windows 7, 8, 8.1...) but if not, you can download current latest version [here](http://www.microsoft.com/en-us/download/details.aspx?id=42642).
+FanFlow makes a few assumptions. First it expects the file `thermald.exe` to be present at `C:\Program Files (x86)\Gigabyte\SIV\thermald.exe` on 64bit Windows and at `C:\Program Files\Gigabyte\SIV\thermald.exe` on 32bit Windows so if you've installed SIV elsewhere create an issue and I will see what can I do about it. Another assumption is that you have at least the .NET framework 4 installed on your machine (comes with Windows 7, 8, 8.1...) but if not, you can download current latest version [here](http://www.microsoft.com/en-us/download/details.aspx?id=42642). And last but not least Intel Management Engine driver for your particular motherboard is necessary to allow for communication between Gigabyte's software and fan speed control module.
 
 FAQ
 ===
@@ -23,7 +23,7 @@ FAQ
 
 **Q:** If anything goes wrong how can I report a bug?
 
-**A:** Fill out [the new issue form](https://github.com/mareksuscak/FanFlow/issues/new) with as much details as you can provide and always provide a log file that can be found at `C:\Program Files (x86)\FanFlow\logs\logfile.txt` or `C:\Program Files\FanFlow\logs\logfile.txt` on 64bit and 32bit Windows respectively.
+**A:** Fill out [the new issue form](https://github.com/mareksuscak/FanFlow/issues/new) with as much details as you can provide and always provide a log file that can be found at `C:\Program Files (x86)\FanFlow\logs\logfile.txt` or `C:\Program Files\FanFlow\logs\logfile.txt` on 32bit and 64bit Windows respectively.
 
 License
 =======

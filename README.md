@@ -1,6 +1,8 @@
 FanFlow
 =======
 
+> **Head Up!** This application stopped working for me and may not be necessary anymore. But make sure to install the latest AppCenter and SIV (System Information Viewer) application that you can download [here](https://www.gigabyte.com/Support/Utility) for Gigabyte haven't updated motherboard's website in a long time now. 
+
 FanFlow fixes Gigabyte's latest version of System Information Viewer (B14.0905.2) application that suddenly does not start Thermal Daemon (thermald.exe) automatically after Windows startup. Thermal Daemon is however responsible for monitoring temperatures and managing fans speed and therefore I have decided to fix it myself by providing an open source Windows Service that does nothing else than starts thermald.exe at the Windows startup.
 
 You can download the latest installer [here](https://github.com/mareksuscak/FanFlow/releases). Please note that the installer is headless which means it won't show any dialog. Just run it and it will be installed automatically. You can always uninstall the FanFlow from the Programs and Features Windows screen.
